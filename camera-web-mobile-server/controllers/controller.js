@@ -8,15 +8,15 @@ exports.sendEmail = (req, res) => {
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-                user: 'saran.doniparthi@gmail.com', // gmail user
-                pass: 'Nellore@002' //  gmail account password
+                user: '*******@gmail.com', // gmail user
+                pass: '*******' //  gmail account password
             }
         });
 
         // setup email data with unicode symbols
         let mailOptions = {
-            from: 'saran <saran.doniparthi@gmail.com>', // sender address
-            to: 'saran.doniparthi@gmail.com', // list of receivers 
+            from: '*******@gmail.com>', // sender address
+            to: '******@gmail.com', // list of receivers 
             subject: 'Camera-Web-Mobile ', // Subject line
             html: '<b>POC For Camera-Web-Mobile</b>', // html body
             attachments: [{   // data uri as an attachment

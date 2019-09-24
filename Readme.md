@@ -21,9 +21,12 @@ npm install
 
 npm start
 
-package
+packages used
 
 https://github.com/MABelanger/jslib-html5-camera-photo
+
+
+https://github.com/MrRio/jsPDF 
 
 
 
@@ -43,8 +46,8 @@ App listening at http://:::4040
 http://localhost:4040/api/files/send 
 
 
-#this app uses nodemailer with gmail to send emails from gmail 
-#from email account has to accept less secure 
-#https://nodemailer.com/usage/using-gmail/ 
+this app uses nodemailer with gmail to send emails from gmail 
+from email account has to accept less secure 
+https://nodemailer.com/usage/using-gmail/ 
 
 

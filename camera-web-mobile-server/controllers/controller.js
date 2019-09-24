@@ -8,8 +8,8 @@ exports.sendEmail = (req, res) => {
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-                user: '*****@gmail.com', // gmail user
-                pass: '********' //  gmail account password
+                user: 'saran.doniparthi@gmail.com', // gmail user
+                pass: 'Nellore@002' //  gmail account password
             }
         });
 

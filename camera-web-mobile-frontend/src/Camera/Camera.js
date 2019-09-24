@@ -1,6 +1,8 @@
 import React from 'react';
 import CameraPhoto, { FACING_MODES } from 'jslib-html5-camera-photo';
+import * as jsPDF from 'jspdf';
 import axios from 'axios';
+
 
 class Camera extends React.Component {
   constructor(props, context) {
@@ -23,6 +25,7 @@ class Camera extends React.Component {
       })
       .catch((error) => {
         alert(error);
+        this.hideimage=true;
         console.error('Camera not started!', error);
       });
   }
@@ -30,9 +33,14 @@ class Camera extends React.Component {
   Upload() {
     
     if(this.state.dataUri){this.hideimage=false;}
+    let doc = new jsPDF(); //pdf converstion
+    doc.setFontSize(40);
+    doc.text(35, 25, 'Camera-Web-Mobile');
+    doc.addImage(this.state.dataUri,'JPEG', 15, 40, 180, 160);
+    let pdf = doc.output('datauristring');   
     const data = new FormData(); 
-    data.append('file', this.state.dataUri);
-     axios.post("http://localhost:4040/api/files/send", data, {      
+    data.append('file', pdf);
+    axios.post("http://localhost:4040/api/files/send", data, {      
     })//replace with your service
       .then(res => { 
         alert('Upload success');
